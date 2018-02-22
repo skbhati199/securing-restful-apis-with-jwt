@@ -41,6 +41,13 @@ router.get('/logout', function(req, res) {
   res.status(200).send({ auth: false, token: null });
 });
 
+/*
+{
+    "auth": true,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhOGU1OWY1NTYxYzQ2MjBlMDc2NDBkMSIsImlhdCI6MTUxOTI3ODU4MSwiZXhwIjoxNTE5MzY0OTgxfQ.6qBTH0ItGgzonjWfqcQaIoF-2FgS3eXQJh7dPlRwcvE"
+}
+*/
+
 router.post('/register', function(req, res) {
 
   var hashedPassword = bcrypt.hashSync(req.body.password, 8);
